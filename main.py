@@ -3,7 +3,7 @@ import time
 import csv
 import config
 # from plugins.execute_db_queries import Executor
-from plugins.process_requests import get_response
+# from plugins.process_requests import get_response
 from aiogram import *
 from telethon.sync import TelegramClient, events
 
