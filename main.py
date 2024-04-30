@@ -4,6 +4,7 @@ import config
 # from plugins.execute_db_queries import Executor
 from plugins.process_requests import get_response
 from aiogram import *
+from telethon.sync import TelegramClient, events
 
 logging.basicConfig(level=logging.INFO)
 bot = Bot(token=config.API_TOKEN)
@@ -28,13 +29,18 @@ async def process_documents(message: types.Message):
     if message.document.mime_type == config.CSV_MIME_TYPE:
         response = get_response(message)
         reader = csv.reader(response.text.split('\n'), delimiter=';')
-        for row in reader:
-            try:
-                data_list = row[0].split(",")
-                address = data_list[0]
-                print(address)  # Trying to access an index that doesn't exist
-            except IndexError:
-                print("Error: Index out of range")
+        try:
+            for row in reader:
+                if len(row) > 0:
+                    data_list = row[0].split(",")
+                    address = data_list[0]
+                    if address == "address":
+                         continue
+                    print(address)  # Trying to access an index that doesn't exist
+                    
+        except IndexError:
+                    print("Error parsing CSV file.")
+
         await message.answer('Adding parsed data from CSV file to database...') 
         await message.answer(f'Success. rows added to database.')
     else:
