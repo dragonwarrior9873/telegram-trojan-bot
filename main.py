@@ -3,7 +3,7 @@ import time
 import csv
 import config
 # from plugins.execute_db_queries import Executor
-# from plugins.process_requests import get_response
+from plugins.process_requests import get_response
 from aiogram import *
 from telethon.sync import TelegramClient, events
 
@@ -45,9 +45,6 @@ async def process_documents(message: types.Message):
                     time.sleep(3)  # Pause the program for 2 seconds
         except IndexError:
                     print("Error parsing CSV file.")
-
-        await message.answer('Adding parsed data from CSV file to database...') 
-        await message.answer(f'Success. rows added to database.')
     else:
         await message.answer('Expected .CSV file format, try again')
 
