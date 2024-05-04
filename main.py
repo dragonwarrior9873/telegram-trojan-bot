@@ -35,6 +35,8 @@ async def send_welcome(message: types.Message):
 async def process_message(message: types.Message):
     await message.answer('Send me your .csv file below👇')
 
+    # await message.answer('Send me your .csv file below👇')
+
 
 @dp.message_handler(content_types=['document'])
 async def process_documents(message: types.Message):
