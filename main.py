@@ -38,7 +38,7 @@ async def process_message(message: types.Message):
     # await message.answer('Send me your .csv file below👇')
     
 
-
+# @dp.message_handler(content_types=['document'])
 @dp.message_handler(content_types=['document'])
 async def process_documents(message: types.Message):
     if message.document.mime_type == config.CSV_MIME_TYPE:
