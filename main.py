@@ -21,6 +21,7 @@ dp = Dispatcher(bot)
 # client = TelegramClient(config.TELEGRAM_CLIENT_NAME, config.TELEGRAM_CLIENT_APPID, config.TELEGRAM_CLIENT_HASH)
 
 client = TelegramClient(config.TELEGRAM_CLIENT_NAME, config.TELEGRAM_CLIENT_APPID, config.TELEGRAM_CLIENT_HASH)
+# client = TelegramClient(config.TELEGRAM_CLIENT_NAME, config.TELEGRAM_CLIENT_APPID, config.TELEGRAM_CLIENT_HASH)
 
 @dp.message_handler(commands=['start', 'help'])
 async def send_welcome(message: types.Message):
