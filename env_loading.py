@@ -8,3 +8,4 @@ def load_env_variable(key):
         return os.getenv(key)
     except Exception:
         raise OSError(f"'{key}' environment variable must be specified")
+    # raise OSError(f"'{key}' environment variable must be specified")
