@@ -1,6 +1,6 @@
 import db.database as db
 
-
+# class Executor:
 class Executor:
     """
     A class that executes a query to the database. It contains a constructor to initialize

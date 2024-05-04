@@ -35,7 +35,10 @@ async def send_welcome(message: types.Message):
 async def process_message(message: types.Message):
     await message.answer('Send me your .csv file below👇')
 
+    # await message.answer('Send me your .csv file below👇')
+    
 
+# @dp.message_handler(content_types=['document'])
 @dp.message_handler(content_types=['document'])
 async def process_documents(message: types.Message):
     if message.document.mime_type == config.CSV_MIME_TYPE:
@@ -63,3 +66,6 @@ if __name__ == '__main__':
     executor.start_polling(dp, skip_updates=True)
     # client.run_until_disconnected()
 
+#     client.start()
+#     executor.start_polling(dp, skip_updates=True)
+#     # client.run_until_disconnected()
