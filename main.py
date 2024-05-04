@@ -13,6 +13,13 @@ bot = Bot(token=config.API_TOKEN)
 dp = Dispatcher(bot)
 
 
+# ng.basicConfig(level=logging.INFO)
+# bot = Bot(token=config.API_TOKEN)
+# dp = Dispatcher(bot)
+
+
+# client = TelegramClient(config.TELEGRAM_CLIENT_NAME, config.TELEGRAM_CLIENT_APPID, config.TELEGRAM_CLIENT_HASH)
+
 client = TelegramClient(config.TELEGRAM_CLIENT_NAME, config.TELEGRAM_CLIENT_APPID, config.TELEGRAM_CLIENT_HASH)
 
 @dp.message_handler(commands=['start', 'help'])
