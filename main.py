@@ -63,7 +63,6 @@ if __name__ == '__main__':
     executor.start_polling(dp, skip_updates=True)
     # client.run_until_disconnected()
 
-# if __name__ == '__main__':
 #     client.start()
 #     executor.start_polling(dp, skip_updates=True)
 #     # client.run_until_disconnected()
